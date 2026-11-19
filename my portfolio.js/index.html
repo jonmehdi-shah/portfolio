@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jon Mehdi Shah builds WordPress websites, CRM systems and follow-up automation for founders and small businesses.">
+  <title>Jon Mehdi Shah | WordPress and CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23d4af6f'%3EJ%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg:#0b0f17;
+      --panel:#121926;
+      --gold:#d4af6f;
+      --gold-soft:#f2d29a;
+      --teal:#3ec5b0;
+      --text:#f5efe7;
+      --muted:#c0b8aa;
+      --line:rgba(212,175,111,.17);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 15% 10%,rgba(62,197,176,.035),transparent 28rem),var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.84);backdrop-filter:blur(16px);border-bottom:1px solid transparent}
+    .site-header.scrolled{border-color:var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-family:Fraunces,Georgia,serif;font-size:1.18rem;font-weight:700}
+    .logo span{color:var(--gold)}
+    .nav-links{display:flex;align-items:center;gap:26px}
+    .nav-links>a:not(.button){color:var(--muted);font-size:.92rem}
+    .nav-links>a:not(.button):hover{color:var(--gold-soft)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border:1px solid var(--gold);border-radius:999px;background:var(--gold);color:#111111;font-size:1rem;font-weight:700;letter-spacing:.01em;text-shadow:none;transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+    .button:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 12px 32px rgba(212,175,111,.18)}
+    .button.secondary{background:transparent;border:1.5px solid var(--gold);color:var(--text)}
+    .button.secondary:hover{background:rgba(212,175,111,.08);color:var(--text)}
+    .menu-button{display:none;border:0;background:transparent;color:var(--text);font-size:1.5rem}
+    :focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+
+    section{padding:92px 0;border-bottom:1px solid var(--line);scroll-margin-top:76px}
+    section:nth-of-type(even):not(.hero){background:rgba(18,25,38,.46)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:Fraunces,Georgia,serif}
+    h1{max-width:950px;margin-bottom:24px;font-size:clamp(3.2rem,7.5vw,6.2rem);line-height:.99;letter-spacing:-.055em}
+    h1 span{color:var(--gold-soft)}
+    h2{margin-bottom:28px;font-size:clamp(2.2rem,4.5vw,3.5rem);line-height:1.08;letter-spacing:-.035em}
+    h3{margin-bottom:8px;font-size:1.15rem}
+
+    .hero{min-height:calc(100vh - 76px);display:flex;align-items:center;border-bottom:0;padding:72px 0 54px;background:radial-gradient(circle at 82% 35%,rgba(212,175,111,.15),transparent 17rem),radial-gradient(circle at 94% 72%,rgba(62,197,176,.08),transparent 12rem)}
+    .hero-copy{max-width:660px;margin-bottom:30px;color:var(--muted);font-size:1.12rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+    .journey{display:grid;grid-template-columns:repeat(4,1fr);margin-top:58px;border-top:1px solid var(--line);padding-top:24px}
+    .journey-step{position:relative;color:var(--muted);font-size:.88rem;padding-right:16px}
+    .dot-row{display:flex;align-items:center;height:26px;margin-bottom:8px}
+    .journey-step:not(:last-child) .dot-row::after{content:"";height:1px;flex:1;margin:0 12px 0 8px;background:linear-gradient(90deg,var(--gold),rgba(212,175,111,.12))}
+    .journey-dot{width:10px;height:10px;flex:none;border-radius:50%;background:var(--gold);box-shadow:0 0 16px rgba(212,175,111,.8);animation:lightDot 3.2s infinite both}
+    .journey-step:nth-child(2) .journey-dot{animation-delay:.8s}
+    .journey-step:nth-child(3) .journey-dot{animation-delay:1.6s}
+    .journey-step:nth-child(4) .journey-dot{animation-delay:2.4s}
+    @keyframes lightDot{0%,18%,100%{opacity:.35;transform:scale(.8)}8%,12%{opacity:1;transform:scale(1.15)}}
+
+    .service-list,.work-list{border-top:1px solid var(--line)}
+    .service-row,.work-row{display:grid;grid-template-columns:180px 1fr;gap:32px;padding:30px 0;border-bottom:1px solid var(--line)}
+    .service-row h3,.work-row h3{margin:0;font-family:Fraunces,Georgia,serif;font-size:1.35rem}
+    .service-row p,.work-row p{margin:0;color:var(--muted)}
+    .small-label{display:inline-block;margin-top:10px;color:var(--gold-soft);font-size:.88rem;font-weight:700}
+
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote-card{min-height:320px;padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--panel);display:flex;flex-direction:column}
+    .quote-card blockquote{margin:0 0 24px;font-family:Fraunces,Georgia,serif;font-size:1.12rem;line-height:1.55}
+    .quote-card blockquote::before{content:"“";color:var(--gold);font-size:2.5rem;line-height:.5;vertical-align:-.45rem;margin-right:4px}
+    .quote-card cite{margin-top:auto;color:var(--muted);font-size:.85rem;font-style:normal}
+    .quote-card cite strong{display:block;color:var(--text);font-size:.95rem}
+    .linkedin-link{display:inline-block;margin-top:24px;color:var(--gold-soft);font-weight:700}
+
+    .about-grid{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center}
+    .about-photo{position:relative;width:300px;height:300px;border:1px solid #d4af6f;border-radius:20px;background:#d4af6f;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:20px}
+    .about-fallback{display:none;width:100%;height:100%;place-items:center;background:#d4af6f;color:#111111;font-size:7rem;font-weight:700}
+    .about-photo.image-failed img{display:none}
+    .about-photo.image-failed .about-fallback{display:grid}
+    .about-copy p{max-width:680px;color:var(--muted);font-size:1.08rem}
+    .about-steps{margin:26px 0 0;padding:0;list-style:none}
+    .about-steps li{padding:10px 0;border-bottom:1px solid var(--line);font-weight:600}
+    .about-steps li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:12px;border-radius:50%;background:var(--teal);vertical-align:middle}
+
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+    .contact-copy p{max-width:440px;color:var(--muted)}
+    .contact-details{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+    .contact-details a{color:var(--gold-soft);font-weight:700;overflow-wrap:anywhere}
+    form{display:grid;gap:14px}
+    label{display:grid;gap:7px;color:var(--muted);font-size:.88rem}
+    input,textarea{width:100%;border:1px solid rgba(245,239,231,.12);border-radius:10px;background:#0d121b;color:var(--text);padding:13px 14px;font:inherit}
+    textarea{min-height:130px;resize:vertical}
+    input:focus,textarea:focus{border-color:var(--gold);outline:3px solid rgba(62,197,176,.16)}
+    footer{padding:26px 0;color:var(--muted)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:860px){
+      .nav-links{position:absolute;left:20px;right:20px;top:68px;display:none;flex-direction:column;align-items:stretch;gap:4px;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+      .nav-links.open{display:flex}
+      .nav-links>a{padding:10px 12px}
+      .nav-links>a.button{margin-top:4px;text-align:center}
+      .menu-button{display:block}
+      .journey{grid-template-columns:1fr 1fr}
+      .journey-step{margin-bottom:18px}
+      .quote-grid{grid-template-columns:1fr}
+      .quote-card{min-height:260px}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .about-grid{gap:28px}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 28px,1120px)}
+      section{padding:68px 0}
+      .nav{min-height:68px}
+      .hero{min-height:auto;padding:54px 0 64px}
+      h1{font-size:clamp(2.65rem,13vw,4.2rem)}
+      .hero-actions .button{width:100%}
+      .journey{grid-template-columns:1fr}
+      .journey-step{padding:8px 0}
+      .journey-step:not(:last-child) .dot-row::after{display:none}
+      .service-row,.work-row{grid-template-columns:1fr;gap:10px}
+      .about-photo{width:min(300px,100%);height:auto;aspect-ratio:1}
+      .footer-inner{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#top" aria-label="Jon Mehdi Shah home">Jon Mehdi <span>Shah</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">&#9776;</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#about">About</a>
+        <a class="button" href="#contact">Get in touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div class="container">
+        <h1>Websites that bring in <span>enquiries.</span> CRMs that follow up.</h1>
+        <p class="hero-copy">I'm a WordPress developer and CRM specialist. I build the site that gets the enquiry, then set up HubSpot or GoHighLevel so no lead goes quiet.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Get in touch</a>
+          <a class="button secondary" href="#work">See my work</a>
+        </div>
+        <div class="journey" aria-label="How enquiries move through the process">
+          <div class="journey-step"><div class="dot-row"><span class="journey-dot"></span></div>A visitor finds you</div>
+          <div class="journey-step"><div class="dot-row"><span class="journey-dot"></span></div>They send an enquiry</div>
+          <div class="journey-step"><div class="dot-row"><span class="journey-dot"></span></div>It lands in your CRM</div>
+          <div class="journey-step"><div class="dot-row"><span class="journey-dot"></span></div>They get a follow up</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="service-list">
+          <article class="service-row"><h3>Websites</h3><p>WordPress, Elementor and WooCommerce sites that say plainly what you offer and make it easy to get in touch.</p></article>
+          <article class="service-row"><h3>CRM and leads</h3><p>HubSpot and GoHighLevel setup, lead stages and tracking, and ManyChat flows that send every Instagram or TikTok message straight into your CRM.</p></article>
+          <article class="service-row"><h3>Automation and support</h3><p>n8n, Zapier and Make workflows, plus virtual assistant support. SEO, Google Ads, social media and video editing are handled with my team.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="reveal">
+      <div class="container">
+        <h2>Selected work</h2>
+        <div class="work-list">
+          <article class="work-row"><h3>HubSpot CRM for a membership brand</h3><p>Built the CRM foundation with lifecycle stages, a subscription pipeline and segments that track registrations, trials, paid sign ups and cancellations.</p></article>
+          <article class="work-row"><h3>Instagram and TikTok message flow</h3><p>A ManyChat flow that replies to messages with clear options and an instant confirmation, then sends every lead into HubSpot.</p></article>
+          <article class="work-row"><h3>Verified contact database</h3><div><p>Compiled a verified database of Toronto and GTA film industry contacts across 19 columns for a film client. Delivered in milestones, the first one ahead of schedule.</p><span class="small-label">Rated 5.0 out of 5 on Upwork</span></div></article>
+          <article class="work-row"><h3>Football YouTube channel growth</h3><p>With my team, helped promote a football YouTube channel to 21.9M views and 35.1K new subscribers in 90 days.</p></article>
+        </div>
+        <p class="small-label">More examples on request.</p>
+      </div>
+    </section>
+
+    <section id="recommendations" class="reveal">
+      <div class="container">
+        <h2>What people I've worked with say</h2>
+        <p class="hero-copy">Recommendations written for me on LinkedIn.</p>
+        <div class="quote-grid">
+          <article class="quote-card"><blockquote>I highly recommend Jon Mehdi Shah for his exceptional work as a Virtual Assistant. Over the past few months working together, Jon consistently demonstrated professionalism, strong organizational skills, and great attention to detail.</blockquote><cite><strong>Norena Abel</strong>Head of Talent Acquisition at ABNA Career Networking. April 2026, worked on the same team.</cite></article>
+          <article class="quote-card"><blockquote>He consistently demonstrated professionalism, was a great team player, and made valuable contributions to our systems and automation initiatives.</blockquote><cite><strong>Imudiase Bright-Igbinigie</strong>Business Analyst and Executive Assistant. June 2026, worked on the same team.</cite></article>
+          <article class="quote-card"><blockquote>He is reliable, professional, easy to communicate with, and takes ownership of his work.</blockquote><cite><strong>Mark Engstar</strong>Founder of Strangers Group. August 2026, worked together at different companies.</cite></article>
+        </div>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/jon-mehdi-shah-va/" target="_blank" rel="noopener noreferrer">Read them on my LinkedIn profile.</a>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="container about-grid">
+        <div class="about-photo" id="about-photo">
+          <img src="profile.jpg" alt="Jon Mehdi Shah" onerror="this.style.display='none';this.parentElement.classList.add('image-failed')">
+          <span class="about-fallback" aria-hidden="true">J</span>
+        </div>
+        <div class="about-copy">
+          <h2>About</h2>
+          <p>I'm Jon, a WordPress developer and CRM specialist with 7 years of remote work with founders and small teams. For bigger projects I bring in my team for SEO, Google Ads, social media and video editing.</p>
+          <ul class="about-steps"><li>I start with how your business really runs</li><li>I build in small steps</li><li>I send regular updates, so nothing needs chasing</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <h2>Tell me what you need</h2>
+            <p>Send a few lines about your website or your leads and I'll reply with how I would approach it.</p>
+            <div class="contact-details">
+              <a href="mailto:jonmehdi.shah.work@gmail.com">jonmehdi.shah.work@gmail.com</a>
+              <a href="https://www.linkedin.com/in/jon-mehdi-shah-va/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+          <form id="f" action="https://formspree.io/f/xgakzyro" method="POST">
+            <label for="name">Name<input id="name" name="name" type="text" autocomplete="name" required></label>
+            <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" required></label>
+            <label for="message">Message<textarea id="message" name="message" required></textarea></label>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <button class="button" type="submit">Send by email</button>
+            <p id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><strong>Jon Mehdi Shah</strong><span>&copy; <span id="year"></span></span></div></footer>
+
+  <script>
+    const header=document.querySelector('.site-header');
+    const menuButton=document.querySelector('.menu-button');
+    const navLinks=document.querySelector('.nav-links');
+    window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+    menuButton.addEventListener('click',()=>{
+      const open=navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded',String(open));
+      menuButton.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+    navLinks.addEventListener('click',event=>{if(event.target.closest('a')){navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open menu')}});
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const revealItems=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});
+      revealItems.forEach(item=>observer.observe(item));
+    }else{revealItems.forEach(item=>item.classList.add('visible'))}
+
+    document.getElementById('f').addEventListener('submit',async event=>{
+      event.preventDefault();
+      const form=event.currentTarget;
+      const button=form.querySelector('button[type="submit"]');
+      const status=document.getElementById('form-status');
+      button.disabled=true;
+      button.textContent='Sending';
+      status.textContent='';
+      status.style.color='#d4af6f';
+
+      try{
+        const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+        if(response.ok){
+          form.reset();
+          status.textContent="Thank you. Your message is sent, and I'll reply soon.";
+        }else{
+          status.textContent='Something went wrong. Please email me at jonmehdi.shah.work@gmail.com.';
+        }
+      }catch(error){
+        status.textContent='Something went wrong. Please email me at jonmehdi.shah.work@gmail.com.';
+      }finally{
+        button.disabled=false;
+        button.textContent='Send by email';
+      }
+    });
+  </script>
+</body>
+</html>
